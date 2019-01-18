@@ -22,7 +22,7 @@ import {formatters} from 'web3-core-helpers';
 import {MethodModuleFactory} from 'web3-core-method';
 import {Ens} from 'web3-eth-ens';
 import {ProvidersModuleFactory} from 'web3-providers';
-import EnsCallMethodFactory from './factories/CustomMethodFactory'
+import EnsCallMethodFactory from './factories/EnsCallMethodFactory'
 import EnsCallModule from './EnsCallModule';
 
 /**
