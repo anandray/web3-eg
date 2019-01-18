@@ -17,23 +17,30 @@
  * @date 2019
  */
 
-import {ProvidersModuleFactory} from 'web3-providers';
-import {MethodModuleFactory} from 'web3-core-method';
-import {Ens} from 'web3-eth-ens';
 import * as Utils from 'web3-utils';
 import {formatters} from 'web3-core-helpers';
+import {MethodModuleFactory} from 'web3-core-method';
+import {Ens} from 'web3-eth-ens';
+import {ProvidersModuleFactory} from 'web3-providers';
 import CustomMethodFactory from './factories/CustomMethodFactory'
 import CustomMethodsModule from './CustomMethodsModule';
 
+/**
+ * @param provider
+ * @param options
+ *
+ * @returns {CustomMethodsModule}
+ *
+ * @constructor
+ */
 export const CustomMethods = (provider, options) => {
-  const methodModuleFactory = new MethodModuleFactory(),
-    ens = new Ens(provider, {});
+  const methodModuleFactory = new MethodModuleFactory();
 
   return new CustomMethodsModule(
     provider,
     new ProvidersModuleFactory(),
     methodModuleFactory,
-    new CustomMethodFactory(methodModuleFactory, Utils, formatters, ens),
+    new CustomMethodFactory(methodModuleFactory, Utils, formatters, new Ens(provider, {})),
     options
   );
 };
