@@ -20,6 +20,8 @@
 import {ProvidersModuleFactory} from 'web3-providers';
 import {MethodModuleFactory} from 'web3-core-method';
 import {Ens} from 'web3-eth-ens';
+import * as Utils from 'web3-utils';
+import {formatters} from 'web3-core-helpers';
 import CustomMethodFactory from './factories/CustomMethodFactory'
 import CustomMethodsModule from './CustomMethodsModule';
 
