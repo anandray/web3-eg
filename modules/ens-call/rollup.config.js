@@ -4,7 +4,7 @@ import autoExternal from 'rollup-plugin-auto-external';
 import cleanup from 'rollup-plugin-cleanup';
 
 const outPath = 'dist/';
-const moduleName = 'CustomMethods';
+const moduleName = 'EnsCall';
 
 export default [
   {
