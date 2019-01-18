@@ -19,12 +19,12 @@
 
 import {AbstractWeb3Module} from 'web3-core';
 
-export default class CustomMethodsModule extends AbstractWeb3Module {
+export default class EnsCallModule extends AbstractWeb3Module {
   /**
    * @param {EthereumProvider|HttpProvider|WebsocketProvider|IpcProvider|String} provider
    * @param {ProvidersModuleFactory} providersModuleFactory
    * @param {MethodModuleFactory} methodModuleFactory
-   * @param {CustomMethodFactory} customMethodFactory
+   * @param {EnsCallMethodFactory} customMethodFactory
    * @param {Object} options
    *
    * @constructor

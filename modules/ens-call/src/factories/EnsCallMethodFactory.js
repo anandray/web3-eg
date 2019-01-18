@@ -20,7 +20,7 @@
 import {AbstractMethodFactory} from 'web3-core-method';
 import EnsCallMethod from '../methods/EnsCallMethod';
 
-export default class CustomMethodFactory extends AbstractMethodFactory {
+export default class EnsCallMethodFactory extends AbstractMethodFactory {
   /**
    * @param {MethodModuleFactory} methodModuleFactory
    * @param {Utils} utils
@@ -34,13 +34,11 @@ export default class CustomMethodFactory extends AbstractMethodFactory {
 
     this.ens = ens;
     this.methods = {
-      ensCall: EnsCallMethod
+      call: EnsCallMethod
     }
   }
 
   /**
-   * TODO: Find a cleaner way for the dependency resolution here.
-   *
    * Returns an MethodModel
    *
    * @param {String} name
@@ -48,7 +46,7 @@ export default class CustomMethodFactory extends AbstractMethodFactory {
    * @returns {AbstractMethod}
    */
   createMethod(name) {
-    if (name === 'ensCall') {
+    if (name === 'call') {
       return new EnsCallMethod(
         this.utils,
         this.formatters,
@@ -58,7 +56,7 @@ export default class CustomMethodFactory extends AbstractMethodFactory {
       );
     }
 
-    super.createMethod(name);
+    return super.createMethod(name);
   }
 
 

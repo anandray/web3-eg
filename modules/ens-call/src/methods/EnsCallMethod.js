@@ -16,6 +16,7 @@
  * @author Samuel Furter <samuel@ethereum.org>
  * @date 2019
  */
+
 import {CallMethod} from 'web3-core-method';
 
 export default class EnsCallMethod extends CallMethod {

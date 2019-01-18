@@ -22,25 +22,25 @@ import {formatters} from 'web3-core-helpers';
 import {MethodModuleFactory} from 'web3-core-method';
 import {Ens} from 'web3-eth-ens';
 import {ProvidersModuleFactory} from 'web3-providers';
-import CustomMethodFactory from './factories/CustomMethodFactory'
-import CustomMethodsModule from './CustomMethodsModule';
+import EnsCallMethodFactory from './factories/CustomMethodFactory'
+import EnsCallModule from './EnsCallModule';
 
 /**
  * @param provider
  * @param options
  *
- * @returns {CustomMethodsModule}
+ * @returns {EnsCallModule}
  *
  * @constructor
  */
-export const CustomMethods = (provider, options) => {
+export const EnsCall = (provider, options) => {
   const methodModuleFactory = new MethodModuleFactory();
 
-  return new CustomMethodsModule(
+  return new EnsCallModule(
     provider,
     new ProvidersModuleFactory(),
     methodModuleFactory,
-    new CustomMethodFactory(methodModuleFactory, Utils, formatters, new Ens(provider, {})),
+    new EnsCallMethodFactory(methodModuleFactory, Utils, formatters, new Ens(provider, {})),
     options
   );
 };
