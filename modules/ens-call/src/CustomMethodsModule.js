@@ -12,41 +12,24 @@
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @file MyCustomMethod
+ * @file CustomMethodsModule.js
  * @author Samuel Furter <samuel@ethereum.org>
  * @date 2019
  */
-import {CallMethod} from 'web3-core-method';
 
-export default class EnsCallMethod extends CallMethod {
+import {AbstractWeb3Module} from 'web3-core';
+
+export default class CustomMethodsModule extends AbstractWeb3Module {
   /**
-   * @param {Utils} utils
-   * @param {Object} formatters
-   * @param {Ens} ens
+   * @param {EthereumProvider|HttpProvider|WebsocketProvider|IpcProvider|String} provider
+   * @param {ProvidersModuleFactory} providersModuleFactory
+   * @param {MethodModuleFactory} methodModuleFactory
+   * @param {CustomMethodFactory} customMethodFactory
+   * @param {Object} options
    *
    * @constructor
    */
-  constructor(utils, formatters, ens) {
-    super(utils, formatters);
-
-    this.ens = ens;
-  }
-
-  /**
-   * Sends a JSON-RPC call request
-   *
-   * @method execute
-   *
-   * @param {AbstractWeb3Module} moduleInstance
-   *
-   * @callback callback callback(error, result)
-   * @returns {Promise<Object|String>}
-   */
-  async execute(moduleInstance) {
-    if (this.parameters[0].to.indexOf('.eth')) {
-      this.parameters[0].to = await this.ens.getAddress(this.parameters[0].to);
-    }
-
-    return super.execute(moduleInstance);
+  constructor(provider, providersModuleFactory, methodModuleFactory, customMethodFactory, options) {
+    super(provider, providersModuleFactory, methodModuleFactory, customMethodFactory, options);
   }
 }

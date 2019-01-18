@@ -12,24 +12,26 @@
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @file CustomMethodsModule
+ * @file index.js
  * @author Samuel Furter <samuel@ethereum.org>
  * @date 2019
  */
 
-import {AbstractWeb3Module} from 'web3-core';
+import {ProvidersModuleFactory} from 'web3-providers';
+import {MethodModuleFactory} from 'web3-core-method';
+import {Ens} from 'web3-eth-ens';
+import CustomMethodFactory from './factories/CustomMethodFactory'
+import CustomMethodsModule from './CustomMethodsModule';
 
-export default class CustomMethodsModule extends AbstractWeb3Module {
-  /**
-   * @param {EthereumProvider|HttpProvider|WebsocketProvider|IpcProvider|String} provider
-   * @param {ProvidersModuleFactory} providersModuleFactory
-   * @param {MethodModuleFactory} methodModuleFactory
-   * @param {CustomMethodsFactory} methodFactory
-   * @param {Object} options
-   *
-   * @constructor
-   */
-  constructor(provider, providersModuleFactory, methodModuleFactory, methodFactory, options) {
-    super(provider, providersModuleFactory, methodModuleFactory, methodFactory, options);
-  }
-}
+export const CustomMethods = (provider, options) => {
+  const methodModuleFactory = new MethodModuleFactory(),
+    ens = new Ens(provider, {});
+
+  return new CustomMethodsModule(
+    provider,
+    new ProvidersModuleFactory(),
+    methodModuleFactory,
+    new CustomMethodFactory(methodModuleFactory, Utils, formatters, ens),
+    options
+  );
+};

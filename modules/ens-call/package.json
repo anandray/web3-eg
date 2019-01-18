@@ -1,8 +1,13 @@
 {
-  "name": "web3-modules-custom-methods",
+  "name": "web3-module-ens-call",
   "version": "0.0.1",
   "scripts": {
     "build": "rollup -c"
+  },
+  "dependencies": {
+    "web3-providers": "1.0.0-beta.38",
+    "web3-core": "1.0.0-beta.38",
+    "web3-core-method": "1.0.0-beta.38"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

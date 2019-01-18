@@ -1,1 +1,0 @@
-## Creation and usage of customized JSON-RPC methods with Web3.js
