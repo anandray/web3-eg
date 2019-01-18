@@ -7,7 +7,7 @@ Supported Web3.js versions: v1.0.0-beta.38
 ## Getting started
 
 First clone the repository:
-```git clone git@github.com:nivida/web3-webpack-starter.git```
+```git clone git@github.com:ethereum/web3-examples.git```
 
 Install the dependencies:
 ```npm install```
