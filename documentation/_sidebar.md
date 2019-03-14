@@ -1,6 +1,9 @@
 - Getting started
 
-  - [Usage](usage.md)
-  - [Setup](setup.md)
+  - [Usage](getting-started/)
+  - [Setup](getting-started/setup.md)
+  - [Connect to a Node](getting-started/connect.md)
 
-- Customization
+- API Reference
+  - [Web3](reference/Web3.md)
+  - [web3-eth](reference/web3-eth.md)

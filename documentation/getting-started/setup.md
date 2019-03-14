@@ -1,8 +1,8 @@
 # Setup
 
-In order to use the web3.js API for your specific need you may have to follow some setup steps. Keep in mind that the web3.js library doesn't interact with Ethereum itself! It works as a wrapper that makes it easy to talk with network nodes.
+In order to use the web3.js API for your specific need you may have to follow some setup steps. Keep in mind that the web3.js library doesn't interact with Ethereum itself! It works as a wrapper that makes it simple to talk with network nodes.
 
-If you already know how blockchain nodes work, you can skip ahead to [node connection](#connecting-to-a-node).
+If you already know how blockchain nodes work, you can skip ahead to [node connection](connect.md).
 
 ### Introduction to Blockchain Nodes
 
@@ -18,4 +18,3 @@ Since this library is *not* a node client, but a wrapper for communication, it c
 
 If you haven't worked with any web3 stack technology, it is advisable that you first familiarize yourself with these types of nodes. A crucial difference between a local node and an RPC service such as Infura is that you can't execute procedures that require private keys with Infura!
 
-### Connecting to a Node

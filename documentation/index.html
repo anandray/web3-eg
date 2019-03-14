@@ -7,10 +7,20 @@
   <meta name="description" content="web3.js API Documentation">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
   <style>
   :root {
-    --base-font-size: 14px;
     --theme-color: #f49131;
+    --base-font-family: "Roboto","Segoe UI", Helvetica, Arial, sans-serif;
+    --table-cell-border-color: var(--mono-tint1);
+    --table-body-border-color: var(--mono-tint1);
+    --table-head-border-color: var(--mono-tint1);
+    --table-cell-border-width: 0px;
+    --table-body-border-width: 2px;
+    --table-head-border-width: 2px;
+    --table-head-background: var(--mono-shade1);
+  }
+  a.section-link::before { display: none !important; }
   </style>
 </head>
 <body>
@@ -18,11 +28,18 @@
   <script>
     window.$docsify = {
       loadSidebar: true,
+      auto2top: true,
+      autoHeader: false,
+      subMaxLevel: 2,
+      themeColor: '#f49131',
       name: 'Web3.js API Docs',
       repo: 'https://github.com/ethereum/web3.js'
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
 </body>
 </html>
