@@ -2,7 +2,7 @@
 ```js
 web3.eth.getBalance(address [, block] [, callback]);
 ```
-> Get the balance of an address at a given block.
+> Get the balance of an address at a given block height.
 >
 > <hr>
 >

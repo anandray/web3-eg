@@ -2,7 +2,7 @@
 ```js
 web3.eth.getBlock(blockHashOrNumber [, returnTransactionObjects] [, callback]);
 ```
-> Returns a block matching the block number or block hash.
+> Fetch a block matching the block number or block hash.
 >
 > <hr>
 >
