@@ -8,7 +8,7 @@ web3.eth.getStorageAt(address, position [, defaultBlock] [, callback]);
 >
 > #### Parameters
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `address` | `String` |  |  |  |
 > | `position` | `Number` |  |  |  |
 > | `defaultBlock` | `Number\|String` | yes | `defaultBlock` |  |

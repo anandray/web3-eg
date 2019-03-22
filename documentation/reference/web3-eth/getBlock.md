@@ -9,7 +9,7 @@ web3.eth.getBlock(blockHashOrNumber [, returnTransactionObjects] [, callback]);
 > #### Parameters
 >
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `blockHashOrNumber` | `String\|Number` |  |  |  |
 > | `returnTransactionObjects` | `boolean` | yes | `false`  | Include transaction data. |
 > | `callback` | `function` | yes |  |  |
@@ -17,7 +17,7 @@ web3.eth.getBlock(blockHashOrNumber [, returnTransactionObjects] [, callback]);
 > #### Returns: `Promise<Object>`
 >
 > | Property | Type | Description |
-> |:-:|:-:|:-:|
+> |:-|:-:|:-|
 > | `number` | `Number` | The block number. `null` if the block is pending. |
 > | `hash` | `String` | 32 byte hash of the block. `null` if the block is pending. |
 > | `parentHash` | `String` | 32 byte hash of the parent block. |

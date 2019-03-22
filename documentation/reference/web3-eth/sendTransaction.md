@@ -8,7 +8,7 @@ web3.eth.sendTransaction(transaction [, callback]);
 >
 > #### Parameters
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `transaction` | `Object` |  |  |  |
 > | `transaction.from` | `String\|Number` |  | `defaultAccount` |  |
 > | `transaction.to` | `String` | yes |  | Leave `undefined` for contract deployment. |
@@ -24,7 +24,7 @@ web3.eth.sendTransaction(transaction [, callback]);
 >
 > #### Returns: `PromiEvent`
 > | Event | Returns | Description |
-> |:-:|:-:|:-:|
+> |:-|:-:|:-|
 > | `"transactionHash"` | `String` | Fired right after the transaction is sent and a transaction hash is available. |
 > | `"receipt"` | `Object` | Fired when the transaction receipt is available. |
 > | `"confirmation"` | `Number, Object` | Fired on block confirmation, from the mined block to the 12th block after. |

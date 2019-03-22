@@ -9,7 +9,7 @@ web3.eth.getBalance(address [, block] [, callback]);
 > #### Parameters
 >
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `address` | `String` |  |  |  |
 > | `block` | `Number` | yes | `defaultBlock`  |  |
 > | `callback` | `function` | yes |  |  |

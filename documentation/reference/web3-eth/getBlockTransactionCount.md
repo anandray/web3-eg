@@ -8,7 +8,7 @@ web3.eth.getBlockTransactionCount(blockHashOrNumber [, callback]);
 >
 > #### Parameters
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `blockHashOrNumber` | `String\|Number` |  |  | Also accepts `"genesis"`,`"latest"`, or `"pending"`. |
 > | `callback` | `function` | yes |  |  |
 >

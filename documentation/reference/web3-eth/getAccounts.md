@@ -8,7 +8,7 @@ web3.eth.getAccounts([callback]);
 >
 > #### Parameters
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `callback` | `function` | yes |  |  |
 >
 > #### Returns: `Promise<Array>`

@@ -8,7 +8,7 @@ web3.eth.getCode(address [, defaultBlock] [, callback]);
 >
 > #### Parameters
 > | Parameter | Type | Optional | Default | Description |
-> |:-:|:-:|:-:|:-:|:-:|
+> |:-|:-:|:-:|:-:|:-|
 > | `address` | `String` |  |  |  |
 > | `defaultBlock` | `Number\|String` | yes | `defaultBlock` |  |
 > | `callback` | `function` | yes |  |  |
