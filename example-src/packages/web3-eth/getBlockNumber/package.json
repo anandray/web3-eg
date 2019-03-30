@@ -1,0 +1,12 @@
+{
+  "name": "getBlockNumber",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@web3-examples/web3js-example-boilerplate": "^1.0.0"
+  }
+}
