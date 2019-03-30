@@ -1,20 +1,14 @@
 {
-  "name": "@web3-examples/web3js-example-boilerplate",
+  "name": "web3js-example-boilerplate",
   "version": "1.0.0",
-  "main": "index.html",
-  "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
-  },
+  "main": "src/base.js",
   "dependencies": {
-    "template": "^0.17.5",
     "web3": "latest"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "description": "> TODO: description",
   "author": "OFRBG <hiro@cehh.io>",
   "publishConfig": {
     "access": "public"

@@ -1,2 +1,4 @@
 import Web3 from "web3";
-window.web3 = new Web3("https://kovan.infura.io/metamask");
+const web3 = new Web3("https://kovan.infura.io/metamask");
+
+export default web3;
