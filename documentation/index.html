@@ -1,50 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>web3.js</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="web3.js API Documentation">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
-  <style>
-  :root {
-    --theme-color: #f49131;
-    --base-font-family: "Roboto","Segoe UI", Helvetica, Arial, sans-serif;
-    --table-cell-border-color: var(--mono-tint1);
-    --table-body-border-color: var(--mono-tint1);
-    --table-head-border-color: var(--mono-tint1);
-    --table-cell-border-width: 1px;
-    --table-body-border-width: 2px;
-    --table-head-border-width: 2px;
-    --table-head-background: var(--mono-shade1);
-    --table-row-even-background: var(--mono-shade3);
-    --code-font-size: 14px;
-    --code-block-padding: 16px;
-  }
-  a.section-link::before { display: none !important; }
-  table > tbody { font-size: 14px; }
-  </style>
-</head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      loadSidebar: true,
-      auto2top: true,
-      autoHeader: false,
-      subMaxLevel: 2,
-      themeColor: '#f49131',
-      name: 'Web3.js API Docs',
-      repo: 'https://github.com/ethereum/web3.js'
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/docsify-copy-code@2"></script>
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify-include-template/dist/docsify-include-template.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>web3.js</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="web3.js API Documentation">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <style>
+:root {
+  --theme-color: #f49131;
+  --base-font-family: "Roboto","Segoe UI", Helvetica, Arial, sans-serif;
+  --table-cell-border-color: var(--mono-tint1);
+  --table-body-border-color: var(--mono-tint1);
+  --table-head-border-color: var(--mono-tint1);
+  --table-cell-border-width: 1px;
+  --table-body-border-width: 2px;
+  --table-head-border-width: 2px;
+  --table-head-background: var(--mono-shade1);
+  --table-row-even-background: var(--mono-shade3);
+  --code-font-size: 14px;
+  --code-block-padding: 16px;
+}
+      a.section-link::before { display: none !important; }
+      table > tbody { font-size: 14px; }
+      .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+
+      .btn:hover, .btn:focus {
+        text-decoration: none;
+      }
+      .btn-warning {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+      }
+
+      .btn-warning:hover {
+        color: #212529;
+        background-color: #e0a800;
+        border-color: #d39e00;
+      }
+
+      .btn-warning:focus, .btn-warning.focus {
+        box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      function attachClick() {
+        $(".btn").on("click", function(){
+          var iframeLoad = $(this).parent()[0].children[1];
+          $(iframeLoad).attr("src",$(iframeLoad).attr("data-src")).removeAttr("data-src").show();
+          $(this).hide();
+        })
+      }
+    </script>
+    <script>
+      $(document).ready(function() {
+        attachClick();
+        $("aside").on("click", function(){
+          attachClick();
+        });
+      });
+    </script>
+    <script>
+      window.$docsify = {
+        plugins: [
+          function(hook, vm) {
+            var embed = function(content) {
+              var embedRegex = /<codesandbox>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
+              var iframe = (
+                `<div style="display: flex; justify-content: center;">
+                  <button class="btn btn-warning">Load Example</button>
+                  <iframe
+                    data-src="https://codesandbox.io/embed/github/ofrbg/web3-examples/tree/documentation-setup/example-src/packages/$2?autoresize=1&fontsize=14&hidenavigation=1&view=editor"
+                    style="display:none; width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;"
+                    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+                  ></iframe>
+                </div>`
+              );
+
+              var embedded = content.replace(embedRegex, iframe);
+
+              return embedded;
+            }
+
+            hook.afterEach(function(html){
+              return embed(html);
+            });
+          }
+        ],
+        loadSidebar: true,
+        auto2top: true,
+        autoHeader: false,
+        subMaxLevel: 2,
+        themeColor: '#f49131',
+        name: 'Web3.js API Docs',
+        repo: 'https://github.com/ethereum/web3.js'
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.6/dist/lazyload.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify-copy-code@2"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="//unpkg.com/docsify-include-template/dist/docsify-include-template.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+  </body>
 </html>
