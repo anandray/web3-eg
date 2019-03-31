@@ -7,6 +7,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "web3": "latest"
+    "babel-core": "^6.26.3",
+    "web3": "^1.0.0-beta.51"
   }
 }

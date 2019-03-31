@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "src/base.js",
   "dependencies": {
-    "web3": "latest"
+    "babel-core": "^6.26.3",
+    "web3": "^1.0.0-beta.51"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
