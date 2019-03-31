@@ -39,3 +39,5 @@ web3.eth.getBlock(blockHashOrNumber [, returnTransactionObjects] [, callback]);
 > | `uncles` | `Array` | Array of uncle hashes of this block. |
 >
 > <hr>
+>
+> <codesandbox>web3-eth/getBlock</codesandbox>
