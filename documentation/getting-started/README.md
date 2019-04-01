@@ -17,6 +17,27 @@ The npm package includes 3 different distributions. Package managers like webpac
 - `dist/*.cjs.js` are Common JavaScript transpiled files.
 - `dist/*.umd.js` are [Universal Module Definitions](https://github.com/umdjs/umd) transpiled files.
 
+### Usage with TypeScript
+
+We support types within the web3.js library itself. Please [open an issue here](https://github.com/ethereum/web3.js/issues/new) if you find any wrong typings.
+
+You can use `web3.js` as follows:
+
+```typescript
+import Web3 from 'web3';
+const web3 = new Web3("ws://localhost:8546");
+```
+
+If you are using the types in a `commonjs` module, like a node app, you just have to enable `esModuleInterop` in your `tsconfig` compile option, as well as `allowSyntheticDefaultImports` for typesystem compatibility.
+
+```js
+"compilerOptions": {
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true,
+  ...
+}
+```
+
 ### Importing the Library
 
 #### ES6
