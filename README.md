@@ -16,6 +16,8 @@ severall starter projects and examples of Web3.js modules.
 
 - [ENS Call Method](modules/ens-call)
 
+---
+
 # Web3 Documentation
 
 Documentation, API reference, and templates for the web3js library.
@@ -25,38 +27,32 @@ Documentation, API reference, and templates for the web3js library.
 Install docsify and serve the docs locally.
 
 ```bash
-npm run install
+npm install
 npm run start
 ```
 
 ### Prerequisites
 
-NodeJS, python, npm, and Docsify are required to run and test.
+NodeJS, Python, and npm are required to run and test.
 
 ## Running the tests
 
-Each example in the `example-src` directory is a node package.
-
 ```bash
-cd example-src
-npm run install
-lerna bootstrap
-npm test
+npm run build
+npm run test
 ```
 
 ### Break down into end to end tests
 
 Each test checks if the example is working and up-to-date.
 
-## Built With
+## Contributing
 
-* ## Contributing
-*
-* Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-*
-* ## Authors
-*
-* * **Samuel Furter** - *Initial work* - [nividia](https://github.com/nividia)
-* * **Oscar "Cehhiro" Fonseca** - *Initial work* - [OFRBG](https://github.com/OFRBG)
-*
-* See also the list of [contributors](https://github.com/ethereum/web3-examples/contributors) who participated in this project.
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+* **Samuel Furter** - *Initial work* - [nividia](https://github.com/nividia)
+* **Oscar "Cehhiro" Fonseca** - *Initial work* - [OFRBG](https://github.com/OFRBG)
+
+See also the list of [contributors](https://github.com/ethereum/web3-examples/contributors) who participated in this project.
