@@ -5,19 +5,6 @@
 This repository contains the example scripts for the Web3.js documentation,
 severall starter projects and examples of Web3.js modules.
 
-## Contents
-
-### [Starters](starters)
-
-- [Webpack](starters/webpack)
-
-
-### [Web3 Modules](modules)
-
-- [ENS Call Method](modules/ens-call)
-
----
-
 # Web3 Documentation
 
 Documentation, API reference, and templates for the web3js library.
@@ -52,7 +39,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Samuel Furter** - *Initial work* - [nividia](https://github.com/nividia)
 * **Oscar "Cehhiro" Fonseca** - *Initial work* - [OFRBG](https://github.com/OFRBG)
+* **Samuel Furter** - *Initial work* - [nivida](https://github.com/nivida)
 
 See also the list of [contributors](https://github.com/ethereum/web3-examples/contributors) who participated in this project.
