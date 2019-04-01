@@ -7,82 +7,13 @@
     <meta name="description" content="web3.js API Documentation">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
+    <link rel="stylesheet" href="./custom.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <style>
-      :root {
-        --mono-hue: 240;
-        --mono-saturation: 0.84%;
-        --base-font-family: "Roboto","Segoe UI", Helvetica, Arial, sans-serif;
-        --base-font-size: 16px;
-        --base-font-weight: 400;
-        --sidebar-width: 21rem;
-        --content-max-width: 45em;
-        --table-cell-border-color: var(--mono-tint1);
-        --table-body-border-color: var(--mono-tint1);
-        --table-head-border-color: var(--mono-tint1);
-        --table-cell-border-width: 1px;
-        --table-body-border-width: 2px;
-        --table-head-border-width: 2px;
-        --table-head-background: var(--mono-shade1);
-        --table-row-even-background: var(--mono-shade3);
-        --code-font-size: 14px;
-        --code-block-padding: 16px;
-      }
-      a.section-link::before {
-        display: none !important;
-      }
-      table > tbody {
-        font-size: 14px;
-      }
-      .btn {
-        display: inline-block;
-        font-weight: 400;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        border: 1px solid transparent;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: 0.25rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      }
-
-      .btn:hover, .btn:focus {
-        text-decoration: none;
-      }
-      .btn-web3js {
-        color: #212529;
-        background-color: #ffc107;
-        border-color: #ffc107;
-      }
-
-      .btn-web3js:hover {
-        color: #212529;
-        background-color: #e0a800;
-        border-color: #d39e00;
-      }
-
-      .btn-web3js:focus, .btn-web3js.focus {
-        box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-      }
-
-    </style>
   </head>
   <body>
     <div id="app"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      window.config = {
-        repoName: "web3-examples",
-        orgName: "ofrbg",
-        branch: "documentation-setup"
-      }
-    </script>
+    <script src="./config.js"></script>
     <script>
       function attachClick() {
         $(".btn").on("click", function(){
@@ -103,31 +34,6 @@
     </script>
     <script>
       window.$docsify = {
-        plugins: [
-          function(hook, vm) {
-            var embed = function(content) {
-              var embedRegex = /<codesandbox>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
-              var iframe = (
-                `<div style="display: flex; justify-content: center;">
-                  <button class="btn btn-web3js">Load Example</button>
-                  <iframe
-                    data-src="https://codesandbox.io/embed/github/${config.orgName}/${config.repoName}/tree/${config.branch}/example-src/packages/$2?fontsize=12&hidenavigation=1&view=editor&codemirror=1&runonclick=1&editorsize=60"
-                    style="margin: 0px; display:none; width:100%; height:300px; border:2px; border-radius: 4px; overflow:hidden;"
-                    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-                  ></iframe>
-                </div>`
-              );
-
-              var embedded = content.replace(embedRegex, iframe);
-
-              return embedded;
-            }
-
-            hook.afterEach(function(html){
-              return embed(html);
-            });
-          }
-        ],
         loadSidebar: true,
         auto2top: true,
         autoHeader: false,
@@ -144,6 +50,29 @@
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
     <script src="//unpkg.com/docsify-include-template/dist/docsify-include-template.js"></script>
+    <script async>
+      window.$docsify.plugins = (window.$docsify.plugins||[]).concat([
+        function(hook, vm) {
+          var embed = function(content) {
+            var embedRegex = /<codesandbox>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
+            var iframe = (
+              `<div style="display: flex; justify-content: center;">
+                <button class="btn btn-web3js">Load Example</button>
+                <iframe
+                  data-src="https://codesandbox.io/embed/github/${config.orgName}/${config.repoName}/tree/${config.branch}/example-src/packages/$2?fontsize=12&hidenavigation=1&view=editor&codemirror=1&runonclick=1&editorsize=60"
+                  style="margin: 0px; display:none; width:100%; height:300px; border:2px; border-radius: 4px; overflow:hidden;"
+                  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+                ></iframe>
+              </div>`
+            );
+            return content.replace(embedRegex, iframe);
+          }
+          hook.afterEach(function(html){
+            return embed(html);
+          });
+        },
+      ]);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   </body>
 </html>
