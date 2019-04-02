@@ -36,11 +36,11 @@ Each test checks if the example is working and up-to-date.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+In [CONTRIBUTING.md](CONTRIBUTING.md) you can find the templates for the API docs reference, as well as the structure for the example packages.
 
 ## Authors
 
-* **Oscar "Cehhiro" Fonseca** - *contributor* - [OFRBG](https://github.com/OFRBG)
-* **Samuel Furter** - *contributor* - [nivida](https://github.com/nivida)
+* **Oscar "Cehhiro" Fonseca** - contributor - [OFRBG](https://github.com/OFRBG)
+* **Samuel Furter** - contributor - [nivida](https://github.com/nivida)
 
 See also the list of [contributors](https://github.com/ethereum/web3-examples/contributors) who participated in this project.
