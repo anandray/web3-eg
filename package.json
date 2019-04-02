@@ -6,7 +6,8 @@
   "scripts": {
     "start": "docsify serve documentation",
     "build": "cd example-src && npm install && lerna bootstrap --hoist",
-    "test": "cd example-src && npm test"
+    "test": "cd example-src && npm test",
+    "compile": "bash ./scripts/build-index.sh"
   },
   "repository": {
     "type": "git",

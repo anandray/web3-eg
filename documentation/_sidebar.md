@@ -7,3 +7,4 @@
 - API Reference
   - [Web3](reference/Web3.md)
   - [web3-eth](reference/web3-eth.md)
+  - [web3-eth-accounts](reference/web3-eth-accounts.md)

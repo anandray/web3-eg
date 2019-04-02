@@ -15,12 +15,13 @@ Install docsify and serve the docs locally.
 
 ```bash
 npm install
+npm run compile
 npm run start
 ```
 
 ### Prerequisites
 
-NodeJS, Python, and npm are required to run and test.
+NodeJS, Python, git (for git bash), and npm are required to run and test.
 
 ## Running the tests
 
