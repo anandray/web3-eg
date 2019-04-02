@@ -7,8 +7,8 @@
     <meta name="description" content="web3.js API Documentation">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
-    <link rel="stylesheet" href="./custom.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./custom.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
   </head>
   <body>
     <div id="app"></div>
@@ -38,7 +38,7 @@
         auto2top: true,
         autoHeader: false,
         subMaxLevel: 2,
-        themeColor: '#f49131',
+        themeColor: '#c99d66',
         name: 'Web3.js API Docs',
         repo: 'https://github.com/ethereum/web3.js'
       }
@@ -50,7 +50,7 @@
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
     <script src="//unpkg.com/docsify-include-template/dist/docsify-include-template.js"></script>
-    <script async>
+    <script>
       window.$docsify.plugins = (window.$docsify.plugins||[]).concat([
         function(hook, vm) {
           var embed = function(content) {
@@ -73,6 +73,5 @@
         },
       ]);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   </body>
 </html>
