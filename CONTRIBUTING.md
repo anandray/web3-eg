@@ -2,6 +2,10 @@
 
 ## API Reference
 
+Below is the suggested format to follow for the documentation files. 
+
+---
+
 ## methodNameOrProperty
 ```js
 web3.module.methodNameOrProperty(params [, optionalParams]);
@@ -30,8 +34,11 @@ web3.module.methodNameOrProperty(params [, optionalParams]);
 >
 > <codesandbox>module-path/methodNameOrProperty</codesandbox>
 
+---
 
 ## Example Microproject
+
+Below is the directory structire of the project documentation and its examples. The `reference` directory has a mirror structure to `example-src`. This allows us to use the CodeSandbox API easily by referencing the example counterpart with the codesandbox HTML tag. Instead of posting the files, CodeSandbox fetches them directly from GitHub. 
 
 #### Directory Structure
 
@@ -108,8 +115,7 @@ import example from '../index.js';
 import Web3 from "web3";
 const web3 = new Web3("https://kovan.infura.io/metamask");
 
-it('get the block data', async () => {
-  const res = await example();
-  expect(res).toHaveProperty('number');
+it('testDescription', async () => {
+  expect().toBe();
 });
 ```
