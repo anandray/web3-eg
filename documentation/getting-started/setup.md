@@ -18,3 +18,6 @@ Since this library is *not* a node client, but a wrapper for communication, it c
 
 If you haven't worked with any web3 stack technology, it is advisable that you first familiarize yourself with these types of nodes. A crucial difference between a local node and an RPC service such as Infura is that you can't execute procedures that require private keys with Infura!
 
+!> When examples include `localhost:8545` as a fallback, that doesn't mean the library *will* find a node there. It is simply the default fallback for local node, such as geth or parity.
+
+?> Consider getting an [Infura access token](https://infura.io/) and using their API as a read-only fallback. 

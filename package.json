@@ -6,18 +6,18 @@
   "scripts": {
     "start": "docsify serve documentation",
     "build": "cd example-src && npm install && lerna bootstrap --hoist",
-    "test": "cd example-src && npm test"
+    "test": "cd example-src && npm test",
+    "compile": "bash ./scripts/build-index.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OFRBG/web3-examples.git"
+    "url": "git+https://github.com/ethereum/web3-examples.git"
   },
-  "author": "Oscar Fonseca",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OFRBG/web3-examples/issues"
+    "url": "https://github.com/ethereum/web3-examples/issues"
   },
-  "homepage": "https://github.com/OFRBG/web3-examples#readme",
+  "homepage": "https://github.com/ethereum/web3-examples#readme",
   "dependencies": {
     "docsify-cli": "^4.3.0"
   }

@@ -17,3 +17,11 @@ When no provider is successfully found, you won't be able to interact with the n
 Over time, connection to nodes has become increasingly complex. Some browsers or extensions have built their own provider abstraction, such as the highly versatile [`provider-engine`](https://github.com/MetaMask/provider-engine). To unify the interface of these multiple provider abstractions, [EIP-1193](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1193.md) aims to standarize the minimal required behavior.
 
 > Providers are a developing topic, and not every group keeps up with the standards or wishes to fully comply. This library tries to be as compatible as possible while still respecting the standards. You might find implementations of wallet providers that randomly stop working due to incompatibilities. When that happens, notify the maintainers of said wallet.
+
+As a rule of thumb, the providers you will find out in the wild are
+- MetaMask (Consensys)
+- Status (Status.im)
+- imToken (Hangzhou Rongshi)
+- TrustWallet (Binance)
+
+Each provider might have its own quirks, so it's good to first get to know what all have in common, and from there add specific cases. 
