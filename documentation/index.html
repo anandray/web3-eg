@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
     <link rel="stylesheet" href="./custom.css" type="text/css"/>
+    <link rel="stylesheet" href="./hybrid.css" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
@@ -23,12 +25,28 @@
           $(this).parent().css("border", "4px var(--mono-tint2) solid");
         })
       }
+      function setStatic() {
+        $("codesandbox").each(function() {
+          var el = $(this);
+          var path = el.attr("example");
+          var url = `https://raw.githubusercontent.com/${config.orgName}/${config.repoName}/${config.branch}/example-src/packages/${path}/index.js`;
+          $.get(url, function(data) {
+            el.text(data.match(/{\n(.*)return.*}/s)[1].slice(0,-2));
+            document.querySelectorAll('codesandbox').forEach((block) => {
+              hljs.highlightBlock(block);
+            });
+          });
+
+        })
+      }
     </script>
     <script>
       $(document).ready(function() {
         attachClick();
+        setStatic();
         $("aside").on("click", function(){
           attachClick();
+          setStatic();
         });
       });
     </script>
@@ -52,11 +70,14 @@
     <script>
       window.$docsify.plugins = (window.$docsify.plugins||[]).concat([
         function(hook, vm) {
-          var embed = function(content) {
-            var embedRegex = /<codesandbox>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
+          var tagRegex = /<codesandbox.*>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
+          var cleanup = function(html) {
+            return html.replace(tagRegex, '<codesandbox example="$2" class="javascript"></codesandbox>');
+          }
+          var embed = function(html) {
             var iframe = (
-              `<div style="display: flex; justify-content: center;">
-                <button class="btn btn-web3js">Load Example</button>
+              `<codesandbox>$2</codesandbox><div style="display: flex; justify-content: center;">
+                <button class="btn btn-web3js">Load CodeSandbox</button>
                 <iframe
                   data-src="https://codesandbox.io/embed/github/${config.orgName}/${config.repoName}/tree/${config.branch}/example-src/packages/$2?fontsize=12&hidenavigation=1&view=editor&codemirror=1&runonclick=1&editorsize=60"
                   style="margin: 0px; display:none; width:100%; height:300px; border:2px; border-radius: 4px; overflow:hidden;"
@@ -64,10 +85,13 @@
                 ></iframe>
               </div>`
             );
-            return content.replace(embedRegex, iframe);
+            return html.replace(tagRegex, iframe);
           }
-          hook.afterEach(function(html){
-            return embed(html);
+          hook.beforeEach(function(content){
+            return content.replace(tagRegex, `#### Example\n<codesandbox>$2</codesandbox>`)
+          });
+          hook.afterEach(function(html, next){
+            next(cleanup(embed(html)));
           });
         },
       ]);
