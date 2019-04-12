@@ -1,5 +1,6 @@
 /* Base16 Atelier Estuary Dark - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/estuary) */
+/* modified by Oscar Fonseca */
 /* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
 
 /* Atelier-Estuary Comment */
@@ -30,7 +31,7 @@
 .hljs-literal,
 .hljs-type,
 .hljs-params {
-  color: #ae7313;
+  color: #ffc878;
 }
 
 /* Atelier-Estuary Green */
@@ -70,7 +71,7 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #22221b;
+  background: #1B1F21;
   color: #929181;
   padding: 0.5em;
 }

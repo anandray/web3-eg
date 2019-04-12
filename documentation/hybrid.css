@@ -1,7 +1,7 @@
 /*
 
 vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
-
+modified by Oscar Fonseca @Cehhiro
 */
 
 /*background color*/
@@ -9,23 +9,23 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
   display: block;
   overflow-x: auto;
   padding: 1em;
-  background: #1d1f21;
+  background: #1C1E20;
 }
 
 /*selection color*/
 .hljs::selection,
 .hljs span::selection {
-  background: #373b41;
+  background: #c99d66;
 }
 
 .hljs::-moz-selection,
 .hljs span::-moz-selection {
-  background: #373b41;
+  background: #c99d66;
 }
 
 /*foreground color*/
 .hljs {
-  color: #c5c8c6;
+  color: #d3d3d3;
 }
 
 /*color: fg_yellow*/
@@ -72,7 +72,7 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
 .hljs-selector-tag,
 .hljs-bullet,
 .hljs-tag {
- color: #81a2be;
+ color: #A7A9C9;
 }
 
 /*color: fg_aqua*/

@@ -57,9 +57,9 @@ table > tbody {
   width: 100%;
 }
 codesandbox {
-  font-family: "Roboto Mono";
+  font-family: "Inconsolata", monospace;
   white-space: pre;
-  font-size: 13px;
+  font-size: 15px;
   border: 2px solid var(--mono-tint3);
   border-radius: 5px;
 }

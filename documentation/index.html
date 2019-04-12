@@ -9,47 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
     <link rel="stylesheet" href="./custom.css" type="text/css"/>
     <link rel="stylesheet" href="./hybrid.css" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Inconsolata" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./config.js"></script>
-    <script>
-      function attachClick() {
-        $(".btn").on("click", function(){
-          var iframeLoad = $(this).parent()[0].children[1];
-          $(iframeLoad).attr("src",$(iframeLoad).attr("data-src")).removeAttr("data-src").show(300);
-          $(this).hide();
-          $(this).parent().css("border", "4px var(--mono-tint2) solid");
-        })
-      }
-      function setStatic() {
-        $("codesandbox").each(function() {
-          var el = $(this);
-          var path = el.attr("example");
-          var url = `https://raw.githubusercontent.com/${config.orgName}/${config.repoName}/${config.branch}/example-src/packages/${path}/index.js`;
-          $.get(url, function(data) {
-            el.text(data.match(/{\n(.*)return.*}/s)[1].slice(0,-2));
-            document.querySelectorAll('codesandbox').forEach((block) => {
-              hljs.highlightBlock(block);
-            });
-          });
-
-        })
-      }
-    </script>
-    <script>
-      $(document).ready(function() {
-        attachClick();
-        setStatic();
-        $("aside").on("click", function(){
-          attachClick();
-          setStatic();
-        });
-      });
-    </script>
+    <script src="./index.js"></script>
     <script>
       window.$docsify = {
         loadSidebar: true,
@@ -67,34 +34,6 @@
     <script src="//unpkg.com/docsify-copy-code@2"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-    <script>
-      window.$docsify.plugins = (window.$docsify.plugins||[]).concat([
-        function(hook, vm) {
-          var tagRegex = /<codesandbox.*>(\s+)?([^\s]*)(\s+)?<\/codesandbox>/g;
-          var cleanup = function(html) {
-            return html.replace(tagRegex, '<codesandbox example="$2" class="javascript"></codesandbox>');
-          }
-          var embed = function(html) {
-            var iframe = (
-              `<codesandbox>$2</codesandbox><div style="display: flex; justify-content: center;">
-                <button class="btn btn-web3js">Load CodeSandbox</button>
-                <iframe
-                  data-src="https://codesandbox.io/embed/github/${config.orgName}/${config.repoName}/tree/${config.branch}/example-src/packages/$2?fontsize=12&hidenavigation=1&view=editor&codemirror=1&runonclick=1&editorsize=60"
-                  style="margin: 0px; display:none; width:100%; height:300px; border:2px; border-radius: 4px; overflow:hidden;"
-                  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-                ></iframe>
-              </div>`
-            );
-            return html.replace(tagRegex, iframe);
-          }
-          hook.beforeEach(function(content){
-            return content.replace(tagRegex, `#### Example\n<codesandbox>$2</codesandbox>`)
-          });
-          hook.afterEach(function(html, next){
-            next(cleanup(embed(html)));
-          });
-        },
-      ]);
-    </script>
+    <script src="./example-plugin.js"></script>
   </body>
 </html>
