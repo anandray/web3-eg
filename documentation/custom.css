@@ -17,7 +17,7 @@
   --code-font-family: "Roboto Mono", Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
   --code-inline-color: #ffc878;
   --code-inline-background: #1a1a1c;
-  --code-font-size: 13px;
+  --code-font-size: 14px;
   --code-block-padding: 16px;
   --blockquote-border-color: var(--mono-tint3);
   --notice-tip-background: var(--mono-shade3);
@@ -26,8 +26,12 @@
 a.section-link::before {
   display: none !important;
 }
+table {
+  display: inline-table;
+  wdidth: 100%;
+}
 table > tbody {
-  font-size: 14px;
+  font-size: 15px;
 }
 .btn {
   display: inline-block;
@@ -56,3 +60,11 @@ table > tbody {
   border-width: 2px;
   width: 100%;
 }
+codesandbox {
+  font-family: "Inconsolata", monospace;
+  white-space: pre;
+  font-size: 15px;
+  border: 2px solid var(--mono-tint3);
+  border-radius: 5px;
+}
+
