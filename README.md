@@ -3,7 +3,7 @@
 ## IN PROGRESS
 
 This repository contains the example scripts for the Web3.js documentation,
-severall starter projects and examples of Web3.js modules.
+several starter projects and examples of Web3.js modules.
 
 # Web3 Documentation
 
