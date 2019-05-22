@@ -32,9 +32,9 @@ npm run test
 
 ## Repo Structure
 
-The project is divided into two main sections, `documentation` and `example-src`.
+The project is divided into two main directories, `documentation` and `example-src`.
 
-Inside `documentation` are all the files that contain the documentation text. This section has the Docsify files, a `getting-started` directory, and a `reference` directory.
+Inside `documentation` are all the files that contain the documentation like the Docsify files, a `getting-started` directory, and a `reference` directory.
 
 `getting-started` contains the information required to use, set up, and clear up web3js concepts. `reference` contains the information about each module. For example, inside `reference` you'll find a directory called `web3-eth` and a file called `web3-eth.md`. The directory contains the Markdown files describing each method in the `web3-eth` module. These files are then auto-compiled with `npm run compile` into `web3-eth.md`. (This is done to load the whole page at once for the module instead of only one Markdown file per method.)
 
