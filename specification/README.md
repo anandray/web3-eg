@@ -1,5 +1,7 @@
 # Web3 Specification
 
+`` Version: 0.0.1 ``
+
 The Web3 specification will document the following points:
 
 - Library Architecture
