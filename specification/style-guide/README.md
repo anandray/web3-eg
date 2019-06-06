@@ -1,4 +1,4 @@
-# Web3 Style Guide
+# Style Guide
 
 The Web3 Style Guide will describe exactly which code style and architectural concepts we are using in the Web3 project.
 
