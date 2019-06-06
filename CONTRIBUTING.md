@@ -1,6 +1,6 @@
 # Contribution Template
 
-## API Reference
+## Documentation
 
 Below is the suggested format to follow for the documentation files. 
 
@@ -8,7 +8,7 @@ Below is the suggested format to follow for the documentation files.
 
 ## methodNameOrProperty
 ```js
-web3.module.methodNameOrProperty(params [, optionalParams]);
+methodNameOrProperty(params [, optionalParams]);
 ```
 > Description 
 >
@@ -70,7 +70,7 @@ The name of the example directory **must** match its counterpart in `documentati
 #### `example-src` files
 
 ###### `package.json`
-```js
+```json
 {
   "name": "methodNameOrProperty",
   "version": "x.x.x",
@@ -86,7 +86,7 @@ The name of the example directory **must** match its counterpart in `documentati
 ```
 
 ###### `sandbox.config.js`
-```js
+```json
 {
   "infiniteLoopProtection": true,
   "hardReloadOnChange": false,
@@ -96,9 +96,11 @@ The name of the example directory **must** match its counterpart in `documentati
 ```
 
 ###### `index.js`
+
 ```js
-import Web3 from "web3";
-const web3 = new Web3("https://kovan.infura.io/metamask");
+import {web3} from 'web3';
+
+web3.init("https://kovan.infura.io/metamask", {});
 
 async function main() {
   /* demo here */
@@ -110,10 +112,12 @@ export default main;
 ```
 
 ###### `test/index.spec.js`
+
 ```js
 import example from '../index.js';
-import Web3 from "web3";
-const web3 = new Web3("https://kovan.infura.io/metamask");
+import {web3} from 'web3';
+
+web3.init("https://kovan.infura.io/metamask", {});
 
 it('testDescription', async () => {
   expect().toBe();
