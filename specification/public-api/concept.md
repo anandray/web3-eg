@@ -25,15 +25,7 @@ namespace web3 {
 
 ```
 
-
-## Asynchronous Processes 
-
-The Web3.js library will use the native ``Promise`` and the ``Observable`` pattern for asynchronous processes. 
-Subscriptions are exclusively here to watch data streams and are implemented with the [Observable of RxJs]().
-The reason to use ``RxJs`` is because of the provided features and the popularity of the framework.
-
-
-## Exposing of classes and methods 
+## Classes And Methods
 
 The public API layer will abstract away the underlying core modules of the Web3.js library. The advantage we have with this kind
 of software architecture is to decouple the internal API from the external API.
@@ -76,7 +68,7 @@ export default class PublicApiWrapper extends MyClass {
         super(new InternalDependency(), context);
      }
      
-     super(new InternalDependency(), web3.get('default'));
+     super(new InternalDependency(), web3.defaultContext);
    }
 }
 ```
@@ -106,6 +98,12 @@ export const myMethod = function(address, context = null) {
     return new GetBalanceMethod([address], context).execute();
   }
     
-  return new GetBalanceMethod([address], web3.get('default')).execute();
+  return new GetBalanceMethod([address], web3.defaultContext).execute();
 };
 ```
+
+## Asynchronous Processes 
+
+The Web3.js library will use the native ``Promise`` and the ``Observable`` pattern for asynchronous processes. 
+Subscriptions are exclusively here to watch data streams and are implemented with the [Observable of RxJs]().
+The reason to use ``RxJs`` is because of the provided features and the popularity of the framework.
