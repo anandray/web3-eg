@@ -1,1 +1,1 @@
-# Types
+# TypeScript Type Definitions
