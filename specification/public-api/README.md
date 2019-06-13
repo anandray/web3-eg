@@ -16,9 +16,9 @@ The [Security Concept]() of the exposed ``web3`` object is explained [here]() .
 interface web3 {
     protected defaultContext: Context;
     
-    init(name: string, context: Context): void; 
+    init(provider: AbstractProvider|string, options: Web3Options): void; 
     
-    add(name: string, context: Context): void; 
+    add(name: string, provider: AbstractProvider|string, options: Web3Options): void; 
     
     get(name: string): Context;
 }
