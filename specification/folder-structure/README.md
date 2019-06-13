@@ -54,7 +54,14 @@
 |           +-- methods
 |           +-- subscriptions
 |           +-- types
-|           +-- TBD
+|       +-- types
+|           +-- context
+|           +-- contract
+|           +-- methods
+|           +-- providers
+|           +-- subscriptions
+|           +-- types
+|           +-- wallet
 |   +-- types
 |       +-- context
 |       +-- contract
