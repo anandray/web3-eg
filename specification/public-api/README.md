@@ -1,6 +1,8 @@
-# Public API Layer
+# Public API
 
-This document is describing the base concepts to decouple the internal core API from the exposed public API.
+## Exporting of classes and methods
+
+All classes and methods are exported over one module with the name ``web3``. 
 
 ## Namespace
 
@@ -9,7 +11,7 @@ This object is handled as singleton and will provide the possibility to connect 
 
 The [Security Concept]() of the exposed ``web3`` object is explained [here]() .
 
-### Interface
+#### Interface
 
 ``` typescript
 
@@ -25,15 +27,18 @@ interface web3 {
 
 ```
 
-## Classes And Methods
+## Decoupling of the core modules
+
+This following sections are describing the base concepts to decouple the internal core API from the exposed public API.
+
+### Classes And Methods
 
 All internal dependencies are handled through wrapping of the method or pre-injecting required dependencies in to the 
 desired class. If the exported class or method is doing any kind of networking related process is it required to define
 the optional context parameter as last constructor or method argument. If no context was given to the method or the 
 constructor of the class is it required to pass the ``defaultContext`` property from the ``web3`` namespace.
 
-### Classes
-
+#### Classes
 
 Example: 
 
@@ -56,7 +61,7 @@ export default class PublicApiWrapper extends MyClass {
 }
 ```
 
-### Methods 
+#### Methods 
 
 Exported methods are aliases for static methods of the related value objects or wrappers for JSON-RPC methods.
 
@@ -84,7 +89,7 @@ export const myMethod = function(address, context = null) {
 };
 ```
 
-## Asynchronous Processes 
+### Asynchronous Processes 
 
 The Web3.js library will use the native ``Promise`` and the ``Observable`` pattern for asynchronous processes. 
 Subscriptions are exclusively here to watch data streams and are implemented with the [Observable of RxJs]().
