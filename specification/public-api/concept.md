@@ -13,7 +13,7 @@ The [Security Concept]() of the exposed ``web3`` object is explained [here]() .
 
 ``` typescript
 
-namespace web3 {
+interface web3 {
     protected defaultContext: Context;
     
     init(name: string, context: Context): void; 
@@ -27,36 +27,19 @@ namespace web3 {
 
 ## Classes And Methods
 
-The public API layer will abstract away the underlying core modules of the Web3.js library. The advantage we have with this kind
-of software architecture is to decouple the internal API from the external API.
+All internal dependencies are handled through wrapping of the method or pre-injecting required dependencies in to the 
+desired class. If the exported class or method is doing any kind of networking related process is it required to define
+the optional context parameter as last constructor or method argument. If no context was given to the method or the 
+constructor of the class is it required to pass the ``defaultContext`` property from the ``web3`` namespace.
 
 ### Classes
 
-Internal dependencies of all exposed classes from the Web3.js library are handled through wrapping of the internal constructor.
 
 Example: 
 
 ``` javascript 
+import web3 from '../web3.js';
 import InternalDependency from './folder/file.js';
-import MyClass from './MyClass.js';
-  
-export class PublicMyClass extends MyClass {
-  /**
-  * @constructor
-  */
-  constructor() {
-      super(new InternalDependency());
-  }
-}
-```
-
-If the exported class is handling any kind of network related actions is it required to define the optional ``context: Context`` parameter as last argument of the constructor.
-The default context of the web3 namespace should get injected if no context is given by the developer.  
-
-Web3 Namespace Example:
-
-``` javascript 
-import {web3} from 'web3';
 import MyClass from './MyClass.js';
 
 export default class PublicApiWrapper extends MyClass {
@@ -75,13 +58,12 @@ export default class PublicApiWrapper extends MyClass {
 
 ### Methods 
 
-Exported utilities methods are aliases to the static methods of the related value objects. 
-All used internal dependencies have to be handled in the corresponding file of the ``public_api`` folder.
+Exported methods are aliases for static methods of the related value objects or wrappers for JSON-RPC methods.
 
 Example: 
 
 ``` javascript 
-import {Address} from 'web3';
+import Address from '../types/Address';
   
 export const isAddress = Address.isAddress;
 ```
@@ -91,7 +73,8 @@ If the exported method is doing any kind of networking action is it required to 
 Example: 
 
 ``` javascript 
-import {web3, GetBalanceMethod} from 'web3';
+import web3 from '../web3.js';
+import GetBalanceMethod from '../methods/GetBalanceMethod.js';
   
 export const myMethod = function(address, context = null) {
   if (context) {
